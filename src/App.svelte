@@ -1,6 +1,7 @@
 <script>
   import { getUniversities } from "./api/hipolabs"
   import University from "./components/University.svelte"
+  import Error from "./components/Error.svelte"
   let country = "Brazil"
 </script>
 
@@ -18,8 +19,8 @@
       {:else}
         <h1>No Campus in {country}</h1>
       {/if}
-    {:catch err}
-      <h1>Error : {err}</h1>
+    {:catch error}
+      <Error {error} />
     {/await}
   </div>
 </main>
