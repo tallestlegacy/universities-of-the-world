@@ -13,6 +13,7 @@
       <div class="waiting">Fetching Universities in {country}</div>
     {:then universities}
       {#if universities.data.length > 0}
+        <h2>{country} has {universities.data.length} Universities</h2>
         {#each universities.data as university, index}
           <University {university} {index} />
         {/each}
